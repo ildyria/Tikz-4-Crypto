@@ -1,0 +1,85 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{ifthen}
+\usepackage{pgfplots}
+\usepackage{amsmath}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{arrows}
+\usetikzlibrary{crypto.symbols}
+\usetikzlibrary{keccaktree}
+
+%% Document
+\begin{document}
+\pgfmathsetseed{56}
+\begin{tikzpicture}[
+	x={(1.0cm,0.0cm)},
+	y={(0.7cm,0.3cm)},
+	z={(0.0cm,1.0cm)}
+]
+
+	% Upper space
+	\draw [green!20, dotted, fill = green!45, fill opacity = 0.25] (-5,-5,5) -- (5,-5,5) -- (5,5,5) -- (-5,5,5) -- cycle;
+	\draw [green!45!black, dotted, fill = green!45, fill opacity = 0.25] (-5,-5,0.2) -- (5,-5,0.2) -- (5,-5,5) -- (-5,-5,5) -- cycle;
+	\draw [green!45!black, dotted, fill = green!45, fill opacity = 0.25] (5,-5,0.2) -- (5,5,0.2) -- (5,5,5) -- (5,-5,5) -- cycle;
+
+	\draw [green!20, dotted, fill = green!45, fill opacity = 0.25] (-5,-5,-0.2) -- (5,-5,-0.2) -- (5,5,-0.2) -- (-5,5,-0.2) -- cycle;
+
+	%plane 0
+	\draw [orange!75!black, dashed, fill = orange!45, fill opacity = 0.50] (-5,-5,0) -- (5,-5,0) -- (5,5,0) -- (-5,5,0) -- cycle;
+
+	% Lower space
+	\draw [green!45!black, dotted, fill = green!45, fill opacity = 0.25] (-5,-5,-0.2) -- (5,-5,-0.2) -- (5,-5,-5) -- (-5,-5,-5) -- cycle;
+	\draw [green!45!black, dotted, fill = green!45, fill opacity = 0.25] (5,-5,-0.2) -- (5,5,-0.2) -- (5,5,-5) -- (5,-5,-5) -- cycle;
+
+	\draw [green!45!black] (-5,0,-5) -- (5,0,5);
+	\draw [green!45!black, dotted] (-5,0,-5) -- (0,0,-5);
+	\draw [green!45!black, dotted] (0,0,5) -- (5,0,5);
+
+	\draw [green!45!black] (0,3,-5) -- (0,-3,5);
+	\draw [green!45!black, dotted] (0,3,-5) -- (0,0,-5);
+	\draw [green!45!black, dotted] (0,-3,5) -- (0,0,5);
+
+	\draw [green!45!black] (-2,2,-5) -- (2,-2,5);
+	\draw [green!45!black, dotted] (-2,2,-5) -- (-2,0,-5);
+	\draw [green!45!black, dotted] (-2,2,-5) -- (0,2,-5);
+	\draw [green!45!black, dotted] (2,-2,5) -- (2,0,5);
+	\draw [green!45!black, dotted] (2,-2,5) -- (0,-2,5);
+
+	\draw [orange!75!black] (-2,-5,0) -- (2,5,0);
+	\draw [orange!75!black] (-5,-2,0) -- (5,2,0);
+
+
+	\draw[thick,->] (-5,0,0) -- (5,0,0) node[anchor=north east]{$x$};;
+	\draw[thick,->] (0,-5,0) -- (0,5,0) node[anchor=north]{$y$};;
+	\draw[thick,->] (0,0,-5) -- (0,0,5) node[anchor=north west]{$z$};;
+
+%	\draw (0,0,0) -- (4,0,0) -- (4,0,-4) -- (0,0,-4) -- (0,0,0); 
+%	\draw (0,0,-4) -- (4,0,-4) -- (4,4,-4) -- (0,4,-4) -- (0,0,-4); 
+
+	% \foreach \z in {3,...,0} {
+ %    		\foreach \y in {0,...,3} {
+ %    			\foreach \x in {0,...,3} {
+	% 			\pgfmathparse{rnd}
+	% 			\ifdim\pgfmathresult pt < 0.45 pt
+	% 			\relax
+	% 				%% Define the dimensions of the state
+ %    					\KeccakDimension{1}{1}{1}{\x}{\y}{\z}
+
+	% 				\KeccakDefColour{cyan!40} 
+	% 				%% Highlight a row of the state
+	% 				\KeccakPoint{0}{0}{0}
+
+	% 		    		%% Draw the state
+ %    					\KeccakState
+ % 				;
+	% 			\fi
+	% 		}
+	% 	}
+	% }
+\end{tikzpicture}
+
+\end{document}

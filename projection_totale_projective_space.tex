@@ -1,0 +1,84 @@
+\documentclass{standalone}
+\usepackage{tikz}
+
+%% Document
+\begin{document}
+
+	\begin{tikzpicture}[
+		x={(1.0cm,0.0cm)},
+		y={(0.8cm,0.2cm)},
+		z={(0.0cm,1.0cm)}
+	]
+
+		% Upper space
+		% \draw [green!20, dotted] (-5,-5,5) -- (5,-5,5) -- (5,5,5) -- (-5,5,5) -- cycle;
+		% \draw [green!45!black, dotted] (-5,-5,0.2) -- (5,-5,0.2) -- (5,-5,5) -- (-5,-5,5) -- cycle;
+		% \draw [green!45!black, dotted] (5,-5,0.2) -- (5,5,0.2) -- (5,5,5) -- (5,-5,5) -- cycle;
+
+		% \draw [green!20, dotted] (-5,-5,-0.2) -- (5,-5,-0.2) -- (5,5,-0.2) -- (-5,5,-0.2) -- cycle;
+
+		% \draw [green!20, dotted, fill = green!45, fill opacity = 0.25] (-5,-5,5) -- (5,-5,5) -- (5,5,5) -- (-5,5,5) -- cycle;
+		% \draw [green!45!black, dotted, fill = green!45, fill opacity = 0.25] (-5,-5,0.2) -- (5,-5,0.2) -- (5,-5,5) -- (-5,-5,5) -- cycle;
+		% \draw [green!45!black, dotted, fill = green!45, fill opacity = 0.25] (5,-5,0.2) -- (5,5,0.2) -- (5,5,5) -- (5,-5,5) -- cycle;
+
+		% \draw [green!20, dotted, fill = green!45, fill opacity = 0.25] (-5,-5,-0.2) -- (5,-5,-0.2) -- (5,5,-0.2) -- (-5,5,-0.2) -- cycle;
+
+		% %plane 0
+		\draw [orange!75!black, dotted] (-5,-5,0) -- (5,-5,0) -- (5,5,0) -- (-5,5,0) -- cycle;
+
+		% % Lower space
+		% \draw [green!45!black, dotted] (-5,-5,-0.2) -- (5,-5,-0.2) -- (5,-5,-5) -- (-5,-5,-5) -- cycle;
+		% \draw [green!45!black, dotted] (5,-5,-0.2) -- (5,5,-0.2) -- (5,5,-5) -- (5,-5,-5) -- cycle;
+
+		% \draw [green!45!black, dotted, fill = green!45, fill opacity = 0.25] (-5,-5,-0.2) -- (5,-5,-0.2) -- (5,-5,-5) -- (-5,-5,-5) -- cycle;
+		% \draw [green!45!black, dotted, fill = green!45, fill opacity = 0.25] (5,-5,-0.2) -- (5,5,-0.2) -- (5,5,-5) -- (5,-5,-5) -- cycle;
+
+		\draw [green!45!black, fill = green!75!black, fill opacity = 0.25] (-5,-5,2) -- (5,-5,2) -- (5,5,2) -- (-5,5,2) -- cycle;
+
+		\draw [green!45!black, dashed] (-5,0,-5) -- (5,0,5);
+		\draw [green!45!black, dotted] (-5,0,-5) -- (0,0,-5);
+		\draw [green!45!black, dotted] (0,0,5) -- (5,0,5);
+		\draw [green!45!black, dotted] (0,0,2) -- (2,0,2);
+		\draw [green!45!black, fill = green!45!black] (2,0,2) circle[radius=1.5pt];
+
+		\draw [green!45!black, dashed] (0,3,-5) -- (0,-3,5);
+		\draw [green!45!black, dotted] (0,3,-5) -- (0,0,-5);
+		\draw [green!45!black, dotted] (0,-3,5) -- (0,0,5);
+
+		\draw [green!45!black, dotted] (0,-6/5,2) -- (0,0,2);
+		\draw [green!45!black, fill = green!45!black] (0,-6/5,2) circle[radius=1.5pt];
+
+		\draw [green!45!black, dashed] (-2,2,-5) -- (2,-2,5);
+		\draw [green!45!black, dotted] (-2,2,-5) -- (-2,0,-5);
+		\draw [green!45!black, dotted] (-2,2,-5) -- (0,2,-5);
+		\draw [green!45!black, dotted] (2,-2,5) -- (2,0,5);
+		\draw [green!45!black, dotted] (2,-2,5) -- (0,-2,5);
+
+		\draw [green!45!black, dotted] (4/5,-4/5,2) -- (4/5,0/5,2);
+		\draw [green!45!black, dotted] (4/5,-4/5,2) -- (0/5,-4/5,2);
+		\draw [green!45!black, fill = green!45!black] (4/5,-4/5,2) circle[radius=1.5pt];
+
+
+		\draw [thick, orange!75!black] (-5,2,0) -- (5,2,0);
+
+		\draw [orange!75!black, dashed] (-2,-5,0) -- (2,5,0);
+		\draw [orange!45!black, fill = orange!45!black] (4/5,2,0) circle[radius=1.5pt];
+
+		\draw [orange!75!black, dashed] (-5,-3,0) -- (5,3,0);
+		\draw [orange!45!black, fill = orange!45!black] (2*5/3,2,0) circle[radius=1.5pt];
+
+		\draw[thick,->] (-5,0,0) -- (5,0,0) node[anchor=north east]{$x$};;
+		\draw[thick,->] (0,-5,0) -- (0,5,0) node[anchor=north]{$y$};;
+		\draw[thick,->] (0,0,-5) -- (0,0,5) node[anchor=north west]{$z$};;
+
+		\draw [black, fill = black] (0,0,2) circle[radius=1.5pt];
+		\draw (0,0,2) node[anchor=south east]{$z = 1$};
+
+		\draw (5,1,0) node[anchor=north west]{Line $\{z = 0, y = 1\}$};
+		\draw (-4,-5,2) node[anchor=north west]{Plane $\{z = 1\}$};
+
+		\draw [blue!75!black, fill = blue!75!black] (2,0,0) circle[radius=1.5pt];
+
+	\end{tikzpicture}
+
+\end{document}

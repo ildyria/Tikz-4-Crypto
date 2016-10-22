@@ -5,22 +5,24 @@ SOURCES := $(wildcard *.tex)
 SOURCES := $(filter-out pgflibraryarrows.new.code.tex, $(SOURCES))
 SOURCES := $(filter-out tikzlibrarykeccaktree.code.tex,  $(SOURCES))
 SOURCES := $(filter-out tikzlibrarycrypto.symbols.code.tex,  $(SOURCES))
-OBJECTS := $(notdir $(SOURCES:.tex=.pdf))
+PDFS := $(notdir $(SOURCES:.tex=.pdf))
+PNGS := $(notdir $(SOURCES:.tex=.png))
 
 
-all: $(OBJECTS)
+all: $(PDFS)
 
 cleanpdf:
+	@rm png/*.png 2> /dev/null || true
 	@rm *.pdf 2> /dev/null || true
 
-force: cleanpdf $(OBJECTS)
+force: cleanpdf $(PDFS)
 
 %.pdf: %.tex
 	echo $*.tex
 	$(LATEX) $*.tex
 
 open:
-	${READ} $(OBJECTS)
+	${READ} $(PDFS)
 
 
 clean:
@@ -38,3 +40,8 @@ clean:
 	@rm *.lol 2> /dev/null || true
 	@rm *.fls 2> /dev/null || true
 	@rm *.fdb_latexmk 2> /dev/null || true
+
+png: $(PDFS) $(PNGS)
+
+%.png: %.pdf
+	convert -density 300 $*.pdf -quality 90 png/$*.png
